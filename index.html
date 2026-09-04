@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bodas de Plata | Maruja & Daniel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #111111;
-            --accent: #d4af37;
-            --bg-light: #fcfcfc;
-            --text-dark: #2c2c2c;
-            --text-muted: #666666;
+            --primary: #1a1a1a;
+            --accent: #c5a059; /* Dorado elegante refinado */
+            --bg-light: #faf8f5; /* Blanco cálido minimalista */
             --card-bg: #ffffff;
+            --text-dark: #2b2b2b;
+            --text-muted: #777777;
+            --border-color: #e8e3d9;
         }
 
         * {
@@ -27,19 +29,21 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .brand-font {
+        h1, h2, h3, h4, .brand-font {
             font-family: 'Cinzel', serif;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            font-weight: 500;
         }
 
+        /* --- ANIMACIONES DE SCROLL --- */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.9s ease-out;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
         }
 
         .reveal.active {
@@ -47,100 +51,104 @@
             transform: translateY(0);
         }
 
+        /* --- CONTENEDOR PRINCIPAL MINIMALISTA --- */
         .wrapper {
-            max-width: 500px;
+            max-width: 480px;
             margin: 0 auto;
             background: #ffffff;
-            box-shadow: 0 0 25px rgba(0,0,0,0.05);
+            box-shadow: 0 0 30px rgba(0,0,0,0.03);
             min-height: 100vh;
             position: relative;
         }
 
         .section {
-            padding: 50px 25px;
+            padding: 55px 30px;
             text-align: center;
-            border-bottom: 1px solid #f0f0f0;
         }
 
         .divider {
-            width: 50px;
+            width: 40px;
             height: 1px;
             background-color: var(--accent);
-            margin: 20px auto;
+            margin: 25px auto;
         }
 
+        /* --- HERO MINIMALISTA (SIN FOTO DE FONDO PESADA) --- */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-            color: #ffffff;
-            padding: 90px 20px 60px 20px;
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background-color: var(--bg-light);
+            padding: 100px 25px 70px 25px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h3 {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
             color: var(--accent);
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.2rem;
+            color: var(--primary);
             margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p.subtitle {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
         }
 
         .hero-quote {
             font-style: italic;
-            font-size: 0.95rem;
-            max-width: 90%;
-            margin-top: 20px;
-            opacity: 0.9;
+            font-size: 0.88rem;
+            color: #555555;
+            margin-top: 25px;
+            line-height: 1.8;
         }
 
+        /* --- CUENTA REGRESIVA --- */
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin: 25px 0;
+            gap: 15px;
+            margin: 30px 0;
         }
 
         .time-box {
-            background: #f8f8f8;
-            border: 1px solid #e5e5e5;
-            padding: 12px 8px;
-            border-radius: 6px;
-            min-width: 65px;
+            border-bottom: 1px solid var(--accent);
+            padding: 10px 5px;
+            min-width: 55px;
         }
 
         .time-box span {
             display: block;
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-family: 'Cinzel', serif;
             color: var(--primary);
         }
 
         .time-box label {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
             color: var(--text-muted);
             letter-spacing: 1px;
         }
 
+        /* --- BOTONES MINIMALISTAS --- */
         .btn {
             display: inline-block;
             background: var(--primary);
             color: #ffffff;
-            padding: 12px 28px;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             transition: all 0.3s ease;
             margin-top: 15px;
             border: 1px solid var(--primary);
@@ -152,85 +160,131 @@
             border: 1px solid var(--primary);
         }
 
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
         .btn i {
             margin-right: 8px;
         }
 
+        /* --- CARDS & DETALLES --- */
         .card {
-            background: var(--card-bg);
-            border: 1px solid #eaeaea;
-            padding: 25px 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 30px 20px;
+            margin-bottom: 20px;
         }
 
         .card-icon {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: var(--accent);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
+        /* --- DRESS CODE MINIMALISTA --- */
         .inspo-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 25px;
         }
 
         .inspo-grid img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 6px;
+            filter: grayscale(20%);
         }
 
+        /* --- GALERÍA --- */
         .gallery-preview {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .gallery-preview img {
             width: 100%;
-            height: 120px;
+            height: 130px;
             object-fit: cover;
-            border-radius: 4px;
+            filter: grayscale(15%);
+        }
+
+        /* --- BOTÓN FLOTANTE MÚSICA --- */
+        .music-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 1000;
+            border: 1px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.08);
         }
 
         footer {
             text-align: center;
-            padding: 30px 20px;
-            font-size: 0.8rem;
+            padding: 40px 20px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
             color: var(--text-muted);
-            background: #f4f4f4;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
         }
     </style>
 </head>
 <body>
 
+<!-- AUDIO ROMÁNTICO PIANO / LOUNGE INSTRUMENTAL -->
+<audio id="bg-music" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=piano-lounge-bg-112199.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="music-toggle" onclick="toggleMusic()" title="Música de fondo">
+    <i class="fa-solid fa-music" id="music-icon"></i>
+</button>
+
 <div class="wrapper">
 
+    <!-- HERO SECTION (MINIMALISTA) -->
     <section class="hero">
-        <h3>Nuestra Renovación de Votos</h3>
+        <h3>25 Aniversario</h3>
         <h1>Maruja & Daniel</h1>
-        <p>25 Años de Amor</p>
+        <p class="subtitle">Renovación de Votos</p>
         <div class="divider"></div>
         <p class="hero-quote">
             "Un matrimonio feliz es una larga conversación que siempre parece demasiado corta."<br>
-            <small>— André Maurois</small>
+            <small style="font-style: normal; letter-spacing: 1px;">— André Maurois</small>
         </p>
     </section>
 
+    <!-- BIENVENIDA -->
     <section class="section reveal">
-        <h2>25 AÑOS DESPUÉS...</h2>
+        <h2>25 AÑOS DESPUÉS</h2>
         <div class="divider"></div>
-        <p>Queremos volver a decir que sí. Tras un cuarto de siglo compartiendo proyectos, risas y la construcción de nuestra familia, deseamos renovar nuestra promesa ante Dios y celebrar este camino recorrido acompañados de las personas que más amamos.</p>
+        <p style="font-size: 0.9rem; color: #444;">Queremos volver a decir que sí. Tras un cuarto de siglo compartiendo proyectos, risas y la construcción de nuestra familia, deseamos renovar nuestra promesa ante Dios y celebrar este camino recorrido acompañados de las personas que más amamos.</p>
     </section>
 
-    <section class="section reveal">
+    <!-- CUENTA REGRESIVA Y GOOGLE CALENDAR -->
+    <section class="section reveal" style="background-color: var(--bg-light);">
         <h3>EL GRAN DÍA</h3>
-        <p>Sábado, 17 de Octubre de 2026 — 7:00 PM</p>
+        <p style="font-size: 0.85rem; letter-spacing: 1px; color: var(--text-muted); margin-top: 5px;">SÁBADO, 17 DE OCTUBRE DE 2026 — 7:00 PM</p>
         
         <div class="countdown-container">
             <div class="time-box"><span id="days">00</span><label>Días</label></div>
@@ -240,10 +294,11 @@
         </div>
 
         <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bodas+de+Plata+-+Maruja+%26+Daniel&dates=20261017T190000/20261017T235900&details=Renovaci%C3%B3n+de+Votos+y+Celebraci%C3%B3n&location=Por+definir" target="_blank" class="btn btn-outline">
-            <i class="fa-regular fa-calendar-check"></i> Agendar en Calendar
+            <i class="fa-regular fa-calendar-check"></i> Agendar Fecha
         </a>
     </section>
 
+    <!-- LUGARES Y HORARIOS -->
     <section class="section reveal">
         <h2>DÓNDE Y CUÁNDO</h2>
         <div class="divider"></div>
@@ -251,10 +306,10 @@
         <div class="card">
             <i class="fa-solid fa-church card-icon"></i>
             <h3>Ceremonia Religiosa</h3>
-            <p style="margin-top: 10px;"><strong>Lugar:</strong> Nombre de la Iglesia (Por definir)</p>
-            <p><strong>Dirección:</strong> Dirección Exacta (Por definir)</p>
-            <p><strong>Hora:</strong> 7:00 PM</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 12px; font-size: 0.75rem;">
+            <p style="margin-top: 10px; font-size: 0.85rem;"><strong>Lugar:</strong> Nombre de la Iglesia (Por definir)</p>
+            <p style="font-size: 0.85rem;"><strong>Dirección:</strong> Dirección Exacta (Por definir)</p>
+            <p style="font-size: 0.85rem;"><strong>Hora:</strong> 7:00 PM</p>
+            <a href="#" class="btn btn-outline" style="margin-top: 15px; font-size: 0.7rem;">
                 <i class="fa-solid fa-location-dot"></i> Ver en Maps
             </a>
         </div>
@@ -262,47 +317,50 @@
         <div class="card">
             <i class="fa-solid fa-glass-cheers card-icon"></i>
             <h3>Recepción & Fiesta</h3>
-            <p style="margin-top: 10px;"><strong>Lugar:</strong> Nombre del Local (Por definir)</p>
-            <p><strong>Dirección:</strong> Dirección Exacta (Por definir)</p>
-            <p><strong>Hora:</strong> A continuación de la ceremonia</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 12px; font-size: 0.75rem;">
+            <p style="margin-top: 10px; font-size: 0.85rem;"><strong>Lugar:</strong> Nombre del Local (Por definir)</p>
+            <p style="font-size: 0.85rem;"><strong>Dirección:</strong> Dirección Exacta (Por definir)</p>
+            <p style="font-size: 0.85rem;"><strong>Hora:</strong> A continuación</p>
+            <a href="#" class="btn btn-outline" style="margin-top: 15px; font-size: 0.7rem;">
                 <i class="fa-solid fa-location-dot"></i> Ver en Maps
             </a>
         </div>
     </section>
 
-    <section class="section reveal">
+    <!-- CÓDIGO DE VESTIMENTA -->
+    <section class="section reveal" style="background-color: var(--bg-light);">
         <h2>DRESS CODE</h2>
         <div class="divider"></div>
-        <p style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Black Tie (Formal)</p>
+        <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; color: var(--accent);">Black Tie (Formal)</p>
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">Damas: Vestido largo elegante.<br>Caballeros: Esmoquin o traje oscuro formal.</p>
         
-        <h4 style="margin-top: 25px; font-size: 0.85rem; text-transform: uppercase;">Inspiración de Atuendo</h4>
+        <h4 style="margin-top: 30px; font-size: 0.75rem; text-transform: uppercase;">Inspiración de Atuendo</h4>
         <div class="inspo-grid">
             <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=400&q=80" alt="Inspo Dama">
             <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80" alt="Inspo Caballero">
         </div>
     </section>
 
+    <!-- REGALOS / APORTES -->
     <section class="section reveal">
         <h2>NUESTRO MEJOR REGALO</h2>
         <div class="divider"></div>
-        <p style="font-size: 0.9rem; margin-bottom: 20px;">
+        <p style="font-size: 0.88rem; color: #444; margin-bottom: 25px;">
             El regalo más valioso para nosotros en estos 25 años es contar con tu presencia y compartir esta alegría juntos. Nuestra casa ya está llena de recuerdos y cosas hermosas, por lo que si deseas hacernos un presente, agradeceremos profundamente una muestra de cariño en sobre o transferencia para nuestro viaje de aniversario.
         </p>
 
-        <div class="card" style="background: #fafafa;">
+        <div class="card">
             <i class="fa-solid fa-mobile-screen card-icon"></i>
             <h3>Billetera Digital</h3>
-            <p style="margin-top: 10px;"><strong>Yape:</strong> Daniel Romero</p>
-            <p><strong>Número:</strong> [Ingresar Número aquí]</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;"><strong>Yape:</strong> Daniel Romero</p>
+            <p style="font-size: 0.85rem;"><strong>Número:</strong> [Ingresar Número aquí]</p>
         </div>
     </section>
 
-    <section class="section reveal">
+    <!-- ÁLBUM DE FOTOS -->
+    <section class="section reveal" style="background-color: var(--bg-light);">
         <h2>NUESTRA HISTORIA</h2>
         <div class="divider"></div>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Muestras de momentos especiales en nuestro camino de 25 años.</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Momentos especiales en nuestro camino de 25 años.</p>
         
         <div class="gallery-preview">
             <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=400&q=80" alt="Foto 1">
@@ -311,29 +369,47 @@
             <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=400&q=80" alt="Foto 4">
         </div>
 
-        <a href="#" target="_blank" class="btn btn-outline" style="margin-top: 20px;">
-            <i class="fa-brands fa-google-drive"></i> Ver o subir fotos al Álbum
+        <a href="#" target="_blank" class="btn btn-outline" style="margin-top: 25px;">
+            <i class="fa-brands fa-google-drive"></i> Ver / Subir Fotos
         </a>
     </section>
 
-    <section class="section reveal" style="background: #fdfbf7;">
-        <h2>CONFIRMACIÓN DE ASISTENCIA</h2>
+    <!-- CONFIRMACIÓN RSVP -->
+    <section class="section reveal">
+        <h2>CONFIRMACIÓN</h2>
         <div class="divider"></div>
-        <p style="font-size: 0.9rem;">Esperamos contar contigo para celebrar este día tan especial.</p>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Por favor confirmar antes del <strong>01 de Octubre de 2026</strong>.</p>
+        <p style="font-size: 0.88rem; color: #444;">Esperamos contar contigo para celebrar este día tan especial.</p>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 5px;">Por favor confirmar antes del <strong>01 de Octubre de 2026</strong>.</p>
 
-        <a href="#" target="_blank" class="btn" style="background-color: #25D366; border-color: #25D366;">
-            <i class="fa-brands fa-whatsapp"></i> Confirmar con Carol Romero
+        <a href="#" target="_blank" class="btn" style="background-color: #128C7E; border-color: #128C7E; margin-top: 20px;">
+            <i class="fa-brands fa-whatsapp"></i> Confirmar Asistencia
         </a>
     </section>
 
     <footer>
-        <p>Maruja & Daniel — 25 Aniversario</p>
+        <p>MARUJA & DANIEL — 25 ANIVERSARIO</p>
     </footer>
 
 </div>
 
 <script>
+    // --- MÚSICA DE FONDO ---
+    const music = document.getElementById("bg-music");
+    const musicIcon = document.getElementById("music-icon");
+
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            musicIcon.classList.remove("fa-music");
+            musicIcon.classList.add("fa-pause");
+        } else {
+            music.pause();
+            musicIcon.classList.remove("fa-pause");
+            musicIcon.classList.add("fa-music");
+        }
+    }
+
+    // --- CUENTA REGRESIVA ---
     const targetDate = new Date("Oct 17, 2026 19:00:00").getTime();
 
     function updateCountdown() {
@@ -355,12 +431,13 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
+    // --- ANIMACIONES DE SCROLL REVEAL ---
     function revealOnScroll() {
         const reveals = document.querySelectorAll(".reveal");
         for (let i = 0; i < reveals.length; i++) {
             const windowHeight = window.innerHeight;
             const elementTop = reveals[i].getBoundingClientRect().top;
-            const elementVisible = 100;
+            const elementVisible = 80;
 
             if (elementTop < windowHeight - elementVisible) {
                 reveals[i].classList.add("active");
