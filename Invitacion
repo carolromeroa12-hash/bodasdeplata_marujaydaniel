@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodas de Plata | Maruja & Daniel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #111111;
+            --accent: #d4af37;
+            --bg-light: #fcfcfc;
+            --text-dark: #2c2c2c;
+            --text-muted: #666666;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 25px rgba(0,0,0,0.05);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .section {
+            padding: 50px 25px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background-color: var(--accent);
+            margin: 20px auto;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+            color: #ffffff;
+            padding: 90px 20px 60px 20px;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-quote {
+            font-style: italic;
+            font-size: 0.95rem;
+            max-width: 90%;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .time-box {
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            padding: 12px 8px;
+            border-radius: 6px;
+            min-width: 65px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .time-box label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #eaeaea;
+            padding: 25px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .inspo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .inspo-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .gallery-preview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .gallery-preview img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <section class="hero">
+        <h3>Nuestra Renovación de Votos</h3>
+        <h1>Maruja & Daniel</h1>
+        <p>25 Años de Amor</p>
+        <div class="divider"></div>
+        <p class="hero-quote">
+            "Un matrimonio feliz es una larga conversación que siempre parece demasiado corta."<br>
+            <small>— André Maurois</small>
+        </p>
+    </section>
+
+    <section class="section reveal">
+        <h2>25 AÑOS DESPUÉS...</h2>
+        <div class="divider"></div>
+        <p>Queremos volver a decir que sí. Tras un cuarto de siglo compartiendo proyectos, risas y la construcción de nuestra familia, deseamos renovar nuestra promesa ante Dios y celebrar este camino recorrido acompañados de las personas que más amamos.</p>
+    </section>
+
+    <section class="section reveal">
+        <h3>EL GRAN DÍA</h3>
+        <p>Sábado, 17 de Octubre de 2026 — 7:00 PM</p>
+        
+        <div class="countdown-container">
+            <div class="time-box"><span id="days">00</span><label>Días</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Seg</label></div>
+        </div>
+
+        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bodas+de+Plata+-+Maruja+%26+Daniel&dates=20261017T190000/20261017T235900&details=Renovaci%C3%B3n+de+Votos+y+Celebraci%C3%B3n&location=Por+definir" target="_blank" class="btn btn-outline">
+            <i class="fa-regular fa-calendar-check"></i> Agendar en Calendar
+        </a>
+    </section>
+
+    <section class="section reveal">
+        <h2>DÓNDE Y CUÁNDO</h2>
+        <div class="divider"></div>
+
+        <div class="card">
+            <i class="fa-solid fa-church card-icon"></i>
+            <h3>Ceremonia Religiosa</h3>
+            <p style="margin-top: 10px;"><strong>Lugar:</strong> Nombre de la Iglesia (Por definir)</p>
+            <p><strong>Dirección:</strong> Dirección Exacta (Por definir)</p>
+            <p><strong>Hora:</strong> 7:00 PM</p>
+            <a href="#" class="btn btn-outline" style="margin-top: 12px; font-size: 0.75rem;">
+                <i class="fa-solid fa-location-dot"></i> Ver en Maps
+            </a>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-glass-cheers card-icon"></i>
+            <h3>Recepción & Fiesta</h3>
+            <p style="margin-top: 10px;"><strong>Lugar:</strong> Nombre del Local (Por definir)</p>
+            <p><strong>Dirección:</strong> Dirección Exacta (Por definir)</p>
+            <p><strong>Hora:</strong> A continuación de la ceremonia</p>
+            <a href="#" class="btn btn-outline" style="margin-top: 12px; font-size: 0.75rem;">
+                <i class="fa-solid fa-location-dot"></i> Ver en Maps
+            </a>
+        </div>
+    </section>
+
+    <section class="section reveal">
+        <h2>DRESS CODE</h2>
+        <div class="divider"></div>
+        <p style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Black Tie (Formal)</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">Damas: Vestido largo elegante.<br>Caballeros: Esmoquin o traje oscuro formal.</p>
+        
+        <h4 style="margin-top: 25px; font-size: 0.85rem; text-transform: uppercase;">Inspiración de Atuendo</h4>
+        <div class="inspo-grid">
+            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=400&q=80" alt="Inspo Dama">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80" alt="Inspo Caballero">
+        </div>
+    </section>
+
+    <section class="section reveal">
+        <h2>NUESTRO MEJOR REGALO</h2>
+        <div class="divider"></div>
+        <p style="font-size: 0.9rem; margin-bottom: 20px;">
+            El regalo más valioso para nosotros en estos 25 años es contar con tu presencia y compartir esta alegría juntos. Nuestra casa ya está llena de recuerdos y cosas hermosas, por lo que si deseas hacernos un presente, agradeceremos profundamente una muestra de cariño en sobre o transferencia para nuestro viaje de aniversario.
+        </p>
+
+        <div class="card" style="background: #fafafa;">
+            <i class="fa-solid fa-mobile-screen card-icon"></i>
+            <h3>Billetera Digital</h3>
+            <p style="margin-top: 10px;"><strong>Yape:</strong> Daniel Romero</p>
+            <p><strong>Número:</strong> [Ingresar Número aquí]</p>
+        </div>
+    </section>
+
+    <section class="section reveal">
+        <h2>NUESTRA HISTORIA</h2>
+        <div class="divider"></div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Muestras de momentos especiales en nuestro camino de 25 años.</p>
+        
+        <div class="gallery-preview">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=400&q=80" alt="Foto 1">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80" alt="Foto 2">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=400&q=80" alt="Foto 3">
+            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=400&q=80" alt="Foto 4">
+        </div>
+
+        <a href="#" target="_blank" class="btn btn-outline" style="margin-top: 20px;">
+            <i class="fa-brands fa-google-drive"></i> Ver o subir fotos al Álbum
+        </a>
+    </section>
+
+    <section class="section reveal" style="background: #fdfbf7;">
+        <h2>CONFIRMACIÓN DE ASISTENCIA</h2>
+        <div class="divider"></div>
+        <p style="font-size: 0.9rem;">Esperamos contar contigo para celebrar este día tan especial.</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Por favor confirmar antes del <strong>01 de Octubre de 2026</strong>.</p>
+
+        <a href="#" target="_blank" class="btn" style="background-color: #25D366; border-color: #25D366;">
+            <i class="fa-brands fa-whatsapp"></i> Confirmar con Carol Romero
+        </a>
+    </section>
+
+    <footer>
+        <p>Maruja & Daniel — 25 Aniversario</p>
+    </footer>
+
+</div>
+
+<script>
+    const targetDate = new Date("Oct 17, 2026 19:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function revealOnScroll() {
+        const reveals = document.querySelectorAll(".reveal");
+        for (let i = 0; i < reveals.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = reveals[i].getBoundingClientRect().top;
+            const elementVisible = 100;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+</script>
+
+</body>
+</html>
