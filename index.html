@@ -76,6 +76,7 @@
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+      display: none !important;
     }
 
     .welcome-modal h2 {
@@ -343,11 +344,11 @@
 </head>
 <body>
 
-  <!-- Modal de Apertura para garantizar la reproducción de audio -->
+  <!-- Modal de Apertura -->
   <div id="welcome-modal" class="welcome-modal">
     <h2>MARUJA & DANIEL</h2>
     <p>Te invitamos a celebrar nuestras Bodas de Plata</p>
-    <button id="enter-btn" class="btn-enter">
+    <button id="enter-btn" class="btn-enter" onclick="openInvitation()">
       <i class="fa-solid fa-envelope-open-text" style="margin-right: 8px;"></i> Abrir Invitación
     </button>
   </div>
@@ -480,26 +481,27 @@
 
   </div>
 
-  <!-- Script con el mecanismo de autorización de sonido -->
+  <!-- Script con el mecanismo de apertura y control de sonido -->
   <script>
     const audio = document.getElementById('bg-music');
     const musicBtn = document.getElementById('music-btn');
     const musicIcon = document.getElementById('music-icon');
     const welcomeModal = document.getElementById('welcome-modal');
-    const enterBtn = document.getElementById('enter-btn');
     let isPlaying = false;
 
-    // Al presionar el botón de bienvenida, se inicia el audio de manera garantizada y se oculta el modal
-    enterBtn.addEventListener('click', () => {
+    function openInvitation() {
+      // Oculta completamente la pantalla modal
+      welcomeModal.classList.add('hidden');
+      welcomeModal.style.display = 'none';
+
+      // Intenta reproducir el audio
       audio.play().then(() => {
         isPlaying = true;
         musicIcon.className = 'fa-solid fa-pause';
-        welcomeModal.classList.add('hidden');
       }).catch((error) => {
-        console.error("Error al reproducir audio:", error);
-        welcomeModal.classList.add('hidden');
+        console.log("Audio desactivado o no disponible:", error);
       });
-    });
+    }
 
     // Control manual con el botón flotante (Pausar/Reproducir)
     musicBtn.addEventListener('click', (e) => {
