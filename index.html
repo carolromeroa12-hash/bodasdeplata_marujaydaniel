@@ -51,6 +51,33 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      position: relative;
+    }
+
+    /* Botón flotante de música */
+    .music-control {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 999;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .music-control:hover {
+      transform: scale(1.08);
+      background-color: var(--accent-hover);
     }
 
     /* Header & Hero Section */
@@ -259,6 +286,16 @@
 </head>
 <body>
 
+  <!-- Reproductor de audio de fondo y botón flotante de control -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="music/musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta el reproductor de audio.
+  </audio>
+
+  <button id="music-btn" class="music-control" title="Reproducir / Pausar Música">
+    <i id="music-icon" class="fa-solid fa-music"></i>
+  </button>
+
   <div class="container">
 
     <!-- HERO SECTION -->
@@ -321,8 +358,6 @@
       <p>Momentos especiales en nuestro camino de 25 años.</p>
 
       <div class="image-grid">
-        <!-- Para vincular las fotos exactamente desde tu álbum de Google Fotos en tu proyecto de GitHub, 
-             debes reemplazar la ruta ("img/foto1.jpg", etc.) con la ruta o URL directa de la imagen exportada de tu carpeta. -->
         <img src="img/foto1.jpg" alt="Momento 1">
         <img src="img/foto2.jpg" alt="Momento 2">
         <img src="img/foto3.jpg" alt="Momento 3">
@@ -377,6 +412,44 @@
     </footer>
 
   </div>
+
+  <!-- Script para la gestión de música de fondo -->
+  <script>
+    const audio = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-btn');
+    const musicIcon = document.getElementById('music-icon');
+    let isPlaying = false;
+
+    // Intentar reproducción automática al interactuar con la página por primera vez
+    function playAudio() {
+      if (!isPlaying) {
+        audio.play().then(() => {
+          isPlaying = true;
+          musicIcon.className = 'fa-solid fa-pause';
+        }).catch(() => {
+          // Si el navegador bloquea el autoplay, el usuario lo iniciará manualmente con el botón
+        });
+      }
+    }
+
+    // Toggle de reproducción manual mediante el botón flotante
+    musicBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (isPlaying) {
+        audio.pause();
+        musicIcon.className = 'fa-solid fa-music';
+        isPlaying = false;
+      } else {
+        audio.play();
+        musicIcon.className = 'fa-solid fa-pause';
+        isPlaying = true;
+      }
+    });
+
+    // Iniciar al primer clic o scroll dentro de la página
+    document.addEventListener('click', playAudio, { once: true });
+    document.addEventListener('scroll', playAudio, { once: true });
+  </script>
 
 </body>
 </html>
