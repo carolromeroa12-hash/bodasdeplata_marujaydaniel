@@ -54,7 +54,7 @@
       position: relative;
     }
 
-    /* Modal / Pantalla de Bienvenida para Autoplay */
+    /* Modal / Pantalla de Bienvenida */
     .welcome-modal {
       position: fixed;
       top: 0;
@@ -353,15 +353,15 @@
     </button>
   </div>
 
-  <!-- Elemento de audio -->
+  <!-- Audio Instrumental de Fondo (Piano Romántico Ambiental) -->
   <audio id="bg-music" loop preload="auto">
-    <source src="music/musica.mp3" type="audio/mpeg">
+    <source src="https://archive.org/download/soundcloud-382924121/382924121.mp3" type="audio/mpeg">
     Tu navegador no soporta reproducción de audio.
   </audio>
 
   <!-- Botón flotante para pausar/reproducir -->
-  <button id="music-btn" class="music-control" title="Pausar / Reproducir Música">
-    <i id="music-icon" class="fa-solid fa-pause"></i>
+  <button id="music-btn" class="music-control" title="Pausar / Reproducir Música" onclick="toggleMusic(event)">
+    <i id="music-icon" class="fa-solid fa-music"></i>
   </button>
 
   <div class="container">
@@ -427,7 +427,7 @@
 
       <div class="image-grid">
         <img src="img/foto1.jpg" alt="Momento 1">
-        <img src="img/foto2.jpg" alt="Momento 2">
+        <img src="img/foto2.jpg" alt="Momento 3">
         <img src="img/foto3.jpg" alt="Momento 3">
         <img src="img/foto4.jpg" alt="Momento 4">
       </div>
@@ -481,41 +481,41 @@
 
   </div>
 
-  <!-- Script con el mecanismo de apertura y control de sonido -->
+  <!-- Script de Apertura y Audio -->
   <script>
     const audio = document.getElementById('bg-music');
-    const musicBtn = document.getElementById('music-btn');
     const musicIcon = document.getElementById('music-icon');
     const welcomeModal = document.getElementById('welcome-modal');
     let isPlaying = false;
 
+    // Volumen moderado para fondo ambiental
+    audio.volume = 0.5;
+
     function openInvitation() {
-      // Oculta completamente la pantalla modal
       welcomeModal.classList.add('hidden');
       welcomeModal.style.display = 'none';
 
-      // Intenta reproducir el audio
       audio.play().then(() => {
         isPlaying = true;
         musicIcon.className = 'fa-solid fa-pause';
-      }).catch((error) => {
-        console.log("Audio desactivado o no disponible:", error);
+      }).catch((err) => {
+        console.log("Autoplay bloqueado por navegador:", err);
       });
     }
 
-    // Control manual con el botón flotante (Pausar/Reproducir)
-    musicBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
+    function toggleMusic(e) {
+      if (e) e.stopPropagation();
       if (isPlaying) {
         audio.pause();
         musicIcon.className = 'fa-solid fa-music';
         isPlaying = false;
       } else {
-        audio.play();
-        musicIcon.className = 'fa-solid fa-pause';
-        isPlaying = true;
+        audio.play().then(() => {
+          musicIcon.className = 'fa-solid fa-pause';
+          isPlaying = true;
+        });
       }
-    });
+    }
   </script>
 
 </body>
