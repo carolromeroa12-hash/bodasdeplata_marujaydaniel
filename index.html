@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bodas de Plata - Maruja & Daniel</title>
   
-  <!-- Tipografías elegantes desde Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -27,11 +24,7 @@
       --font-body: 'Montserrat', sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: var(--bg-color);
@@ -54,13 +47,10 @@
       position: relative;
     }
 
-    /* Modal / Pantalla de Bienvenida */
     .welcome-modal {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
       background-color: rgba(252, 251, 249, 0.98);
       z-index: 10000;
       display: flex;
@@ -73,10 +63,7 @@
     }
 
     .welcome-modal.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      display: none !important;
+      opacity: 0; visibility: hidden; pointer-events: none; display: none !important;
     }
 
     .welcome-modal h2 {
@@ -112,24 +99,17 @@
       transform: scale(1.03);
     }
 
-    /* Botón flotante de música */
     .music-control {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 25px; right: 25px;
       z-index: 999;
       background-color: var(--accent-color);
       color: #ffffff;
-      width: 50px;
-      height: 50px;
+      width: 50px; height: 50px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      cursor: pointer;
-      border: none;
-      outline: none;
+      cursor: pointer; border: none; outline: none;
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
@@ -138,7 +118,6 @@
       background-color: var(--accent-hover);
     }
 
-    /* Header & Hero Section */
     .hero {
       text-align: center;
       padding: 60px 20px 40px;
@@ -173,8 +152,7 @@
     }
 
     .divider {
-      width: 50px;
-      height: 1px;
+      width: 50px; height: 1px;
       background-color: var(--accent-color);
       margin: 0 auto 30px;
     }
@@ -195,16 +173,13 @@
       letter-spacing: 1px;
     }
 
-    /* General Section Styling */
     section {
       padding: 40px 25px;
       text-align: center;
       border-bottom: 1px solid #f0ece1;
     }
 
-    section:last-child {
-      border-bottom: none;
-    }
+    section:last-child { border-bottom: none; }
 
     h2 {
       font-family: var(--font-title);
@@ -216,14 +191,8 @@
       margin-bottom: 15px;
     }
 
-    p {
-      font-size: 0.95rem;
-      color: #555;
-      font-weight: 300;
-      margin-bottom: 15px;
-    }
+    p { font-size: 0.95rem; color: #555; font-weight: 300; margin-bottom: 15px; }
 
-    /* Cards */
     .card {
       background-color: var(--card-bg);
       padding: 30px 20px;
@@ -232,11 +201,7 @@
       border: 1px solid #f0eada;
     }
 
-    .card-icon {
-      font-size: 1.8rem;
-      color: var(--accent-color);
-      margin-bottom: 15px;
-    }
+    .card-icon { font-size: 1.8rem; color: var(--accent-color); margin-bottom: 15px; }
 
     .card h3 {
       font-family: var(--font-title);
@@ -247,17 +212,9 @@
       text-transform: uppercase;
     }
 
-    .card-info {
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
+    .card-info { font-size: 0.9rem; margin-bottom: 8px; }
+    .card-info strong { font-weight: 500; color: #333; }
 
-    .card-info strong {
-      font-weight: 500;
-      color: #333;
-    }
-
-    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -276,10 +233,7 @@
       cursor: pointer;
     }
 
-    .btn:hover {
-      background-color: var(--title-color);
-      color: #ffffff;
-    }
+    .btn:hover { background-color: var(--title-color); color: #ffffff; }
 
     .btn-whatsapp {
       background-color: var(--whatsapp-color);
@@ -290,12 +244,8 @@
       font-weight: 500;
     }
 
-    .btn-whatsapp:hover {
-      background-color: var(--whatsapp-hover);
-      color: #ffffff;
-    }
+    .btn-whatsapp:hover { background-color: var(--whatsapp-hover); color: #ffffff; }
 
-    /* Grid for dress code and gallery images */
     .image-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -305,12 +255,12 @@
 
     .image-grid img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 2px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* Bank details styling */
     .bank-details {
       text-align: left;
       background: #fff;
@@ -321,16 +271,9 @@
       border: 1px dashed var(--accent-color);
     }
 
-    .bank-details p {
-      margin-bottom: 6px;
-      font-size: 0.85rem;
-    }
+    .bank-details p { margin-bottom: 6px; font-size: 0.85rem; }
+    .bank-details p:last-child { margin-bottom: 0; }
 
-    .bank-details p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Footer */
     footer {
       text-align: center;
       padding: 30px;
@@ -344,7 +287,6 @@
 </head>
 <body>
 
-  <!-- Modal de Apertura -->
   <div id="welcome-modal" class="welcome-modal">
     <h2>MARUJA & DANIEL</h2>
     <p>Te invitamos a celebrar nuestras Bodas de Plata</p>
@@ -353,20 +295,16 @@
     </button>
   </div>
 
-  <!-- Audio Instrumental de Fondo (Piano Romántico Ambiental) -->
   <audio id="bg-music" loop preload="auto">
     <source src="https://archive.org/download/soundcloud-382924121/382924121.mp3" type="audio/mpeg">
-    Tu navegador no soporta reproducción de audio.
   </audio>
 
-  <!-- Botón flotante para pausar/reproducir -->
   <button id="music-btn" class="music-control" title="Pausar / Reproducir Música" onclick="toggleMusic(event)">
     <i id="music-icon" class="fa-solid fa-music"></i>
   </button>
 
   <div class="container">
 
-    <!-- HERO SECTION -->
     <header class="hero">
       <div class="subtitle">25 Aniversario</div>
       <h1>MARUJA & DANIEL</h1>
@@ -378,7 +316,6 @@
       <div class="quote-author">— C.S. Lewis</div>
     </header>
 
-    <!-- 25 AÑOS DESPUÉS -->
     <section>
       <h2>25 AÑOS DESPUÉS</h2>
       <div class="divider"></div>
@@ -387,7 +324,6 @@
       </p>
     </section>
 
-    <!-- DÓNDE Y CUÁNDO -->
     <section>
       <h2>DÓNDE Y CUÁNDO</h2>
       <div class="divider"></div>
@@ -404,7 +340,6 @@
       </div>
     </section>
 
-    <!-- DRESS CODE -->
     <section>
       <h2>DRESS CODE</h2>
       <div class="divider"></div>
@@ -419,25 +354,24 @@
       </div>
     </section>
 
-    <!-- NUESTRA HISTORIA / FOTOS -->
     <section>
       <h2>NUESTRA HISTORIA</h2>
       <div class="divider"></div>
       <p>Momentos especiales en nuestro camino de 25 años.</p>
 
+      <!-- Rutas directas a los archivos subidos -->
       <div class="image-grid">
-        <img src="img/foto1.jpg" alt="Momento 1">
-        <img src="img/foto2.jpg" alt="Momento 3">
-        <img src="img/foto3.jpg" alt="Momento 3">
-        <img src="img/foto4.jpg" alt="Momento 4">
+        <img src="IMG_9150.JPG" alt="Maruja & Daniel">
+        <img src="IMG_9172.JPG" alt="Maruja & Daniel B&N">
+        <img src="20260806_165116.jpg" alt="Maruja & Daniel Atardecer">
+        <img src="IMG_5813.jpg" alt="Familia Año Nuevo">
       </div>
 
       <a href="https://photos.google.com/u/0/share/AF1QipNbBnJbVx0ZdfkjXbjpiVOS3jHAuuINvD4DmtW7MvYOi3VHOgDSCAgNkyhHajAjUA?hl=es&key=aF9iSkRyNGlIVUlvd2RwLVJQaVA1bjFKQURUZFhn" target="_blank" rel="noopener noreferrer" class="btn">
-        <i class="fa-solid fa-images"></i> Ver Fotos
+        <i class="fa-solid fa-images"></i> Ver Más Fotos
       </a>
     </section>
 
-    <!-- REGALO -->
     <section>
       <h2>NUESTRO MEJOR REGALO</h2>
       <div class="divider"></div>
@@ -462,7 +396,6 @@
       </div>
     </section>
 
-    <!-- CONFIRMACIÓN -->
     <section>
       <h2>CONFIRMACIÓN</h2>
       <div class="divider"></div>
@@ -474,21 +407,18 @@
       </a>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <p>MARUJA & DANIEL — BODAS DE PLATA 2026</p>
     </footer>
 
   </div>
 
-  <!-- Script de Apertura y Audio -->
   <script>
     const audio = document.getElementById('bg-music');
     const musicIcon = document.getElementById('music-icon');
     const welcomeModal = document.getElementById('welcome-modal');
     let isPlaying = false;
 
-    // Volumen moderado para fondo ambiental
     audio.volume = 0.5;
 
     function openInvitation() {
@@ -499,7 +429,7 @@
         isPlaying = true;
         musicIcon.className = 'fa-solid fa-pause';
       }).catch((err) => {
-        console.log("Autoplay bloqueado por navegador:", err);
+        console.log("Autoplay bloqueado:", err);
       });
     }
 
