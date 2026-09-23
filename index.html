@@ -1,453 +1,378 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodas de Plata | Maruja & Daniel</title>
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #1a1a1a;
-            --accent: #c5a059; /* Dorado elegante refinado */
-            --bg-light: #faf8f5; /* Blanco cálido minimalista */
-            --card-bg: #ffffff;
-            --text-dark: #2b2b2b;
-            --text-muted: #777777;
-            --border-color: #e8e3d9;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bodas de Plata - Maruja & Daniel</title>
+  
+  <!-- Tipografías elegantes desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    :root {
+      --bg-color: #fcfbf9;
+      --card-bg: #f7f5f0;
+      --text-color: #4a4a4a;
+      --title-color: #1a1a1a;
+      --accent-color: #b89b5e;
+      --accent-hover: #9e8247;
+      --whatsapp-color: #128c7e;
+      --whatsapp-hover: #0e6c61;
+      --font-title: 'Cormorant Garamond', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        h1, h2, h3, h4, .brand-font {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 3px;
-            font-weight: 500;
-        }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
 
-        /* --- ANIMACIONES DE SCROLL --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      background-color: #ffffff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    /* Header & Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background-color: var(--bg-color);
+    }
 
-        /* --- CONTENEDOR PRINCIPAL MINIMALISTA --- */
-        .wrapper {
-            max-width: 480px;
-            margin: 0 auto;
-            background: #ffffff;
-            box-shadow: 0 0 30px rgba(0,0,0,0.03);
-            min-height: 100vh;
-            position: relative;
-        }
+    .hero .subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
 
-        .section {
-            padding: 55px 30px;
-            text-align: center;
-        }
+    .hero h1 {
+      font-family: var(--font-title);
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--title-color);
+      letter-spacing: 2px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
 
-        .divider {
-            width: 40px;
-            height: 1px;
-            background-color: var(--accent);
-            margin: 25px auto;
-        }
+    .hero .event-type {
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 25px;
+    }
 
-        /* --- HERO MINIMALISTA (SIN FOTO DE FONDO PESADA) --- */
-        .hero {
-            background-color: var(--bg-light);
-            padding: 100px 25px 70px 25px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
+    .divider {
+      width: 50px;
+      height: 1px;
+      background-color: var(--accent-color);
+      margin: 0 auto 30px;
+    }
 
-        .hero h3 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
+    .quote {
+      font-family: var(--font-title);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #555;
+      padding: 0 15px;
+      margin-bottom: 10px;
+    }
 
-        .hero h1 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
+    .quote-author {
+      font-size: 0.85rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        .hero p.subtitle {
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
+    /* General Section Styling */
+    section {
+      padding: 40px 25px;
+      text-align: center;
+      border-bottom: 1px solid #f0ece1;
+    }
 
-        .hero-quote {
-            font-style: italic;
-            font-size: 0.88rem;
-            color: #555555;
-            margin-top: 25px;
-            line-height: 1.8;
-        }
+    section:last-child {
+      border-bottom: none;
+    }
 
-        /* --- CUENTA REGRESIVA --- */
-        .countdown-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-        }
+    h2 {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--title-color);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
 
-        .time-box {
-            border-bottom: 1px solid var(--accent);
-            padding: 10px 5px;
-            min-width: 55px;
-        }
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      font-weight: 300;
+      margin-bottom: 15px;
+    }
 
-        .time-box span {
-            display: block;
-            font-size: 1.5rem;
-            font-family: 'Cinzel', serif;
-            color: var(--primary);
-        }
+    /* Cards */
+    .card {
+      background-color: var(--card-bg);
+      padding: 30px 20px;
+      border-radius: 4px;
+      margin-top: 20px;
+      border: 1px solid #f0eada;
+    }
 
-        .time-box label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
+    .card-icon {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      margin-bottom: 15px;
+    }
 
-        /* --- BOTONES MINIMALISTAS --- */
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: #ffffff;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            margin-top: 15px;
-            border: 1px solid var(--primary);
-        }
+    .card h3 {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: var(--title-color);
+      text-transform: uppercase;
+    }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
+    .card-info {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
 
-        .btn-outline:hover {
-            background: var(--primary);
-            color: #ffffff;
-        }
+    .card-info strong {
+      font-weight: 500;
+      color: #333;
+    }
 
-        .btn i {
-            margin-right: 8px;
-        }
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 25px;
+      background-color: transparent;
+      color: var(--title-color);
+      border: 1px solid var(--title-color);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
 
-        /* --- CARDS & DETALLES --- */
-        .card {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            padding: 30px 20px;
-            margin-bottom: 20px;
-        }
+    .btn:hover {
+      background-color: var(--title-color);
+      color: #ffffff;
+    }
 
-        .card-icon {
-            font-size: 1.4rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
+    .btn-whatsapp {
+      background-color: var(--whatsapp-color);
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      padding: 15px 20px;
+      font-weight: 500;
+    }
 
-        /* --- DRESS CODE MINIMALISTA --- */
-        .inspo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 25px;
-        }
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
+      color: #ffffff;
+    }
 
-        .inspo-grid img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            filter: grayscale(20%);
-        }
+    /* Grid for dress code images */
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
 
-        /* --- GALERÍA --- */
-        .gallery-preview {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
+    .image-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
 
-        .gallery-preview img {
-            width: 100%;
-            height: 130px;
-            object-fit: cover;
-            filter: grayscale(15%);
-        }
+    /* Bank details styling */
+    .bank-details {
+      text-align: left;
+      background: #fff;
+      padding: 15px;
+      border-radius: 4px;
+      margin-top: 15px;
+      font-size: 0.85rem;
+      border: 1px dashed var(--accent-color);
+    }
 
-        /* --- BOTÓN FLOTANTE MÚSICA --- */
-        .music-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary);
-            color: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            z-index: 1000;
-            border: 1px solid var(--accent);
-            transition: transform 0.3s ease;
-        }
+    .bank-details p {
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+    }
 
-        .music-btn:hover {
-            transform: scale(1.08);
-        }
+    .bank-details p:last-child {
+      margin-bottom: 0;
+    }
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            background: var(--bg-light);
-            border-top: 1px solid var(--border-color);
-        }
-    </style>
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: var(--bg-color);
+      font-size: 0.8rem;
+      color: #999;
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- AUDIO ROMÁNTICO PIANO / LOUNGE INSTRUMENTAL -->
-<audio id="bg-music" loop preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=piano-lounge-bg-112199.mp3" type="audio/mpeg">
-</audio>
+  <div class="container">
 
-<button class="music-btn" id="music-toggle" onclick="toggleMusic()" title="Música de fondo">
-    <i class="fa-solid fa-music" id="music-icon"></i>
-</button>
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <div class="subtitle">25 Aniversario</div>
+      <h1>MARUJA & DANIEL</h1>
+      <div class="event-type">BODAS DE PLATA</div>
+      <div class="divider"></div>
+      <div class="quote">
+        "Estar enamorado es algo maravilloso, pero el amor maduro es lo que sostiene una vida entera."
+      </div>
+      <div class="quote-author">— C.S. Lewis</div>
+    </header>
 
-<div class="wrapper">
-
-    <!-- HERO SECTION (MINIMALISTA) -->
-    <section class="hero">
-        <h3>25 Aniversario</h3>
-        <h1>Maruja & Daniel</h1>
-        <p class="subtitle">Renovación de Votos</p>
-        <div class="divider"></div>
-        <p class="hero-quote">
-            "Un matrimonio feliz es una larga conversación que siempre parece demasiado corta."<br>
-            <small style="font-style: normal; letter-spacing: 1px;">— André Maurois</small>
-        </p>
+    <!-- 25 AÑOS DESPUÉS -->
+    <section>
+      <h2>25 AÑOS DESPUÉS</h2>
+      <div class="divider"></div>
+      <p>
+        25 años caminando juntos son la mejor razón para celebrar. Tras un cuarto de siglo de historias, aprendizajes y momentos inolvidables, queremos reunirnos con nuestra familia y amigos más cercanos para brindar por todo lo vivido y por lo que aún nos espera.
+      </p>
     </section>
 
-    <!-- BIENVENIDA -->
-    <section class="section reveal">
-        <h2>25 AÑOS DESPUÉS</h2>
-        <div class="divider"></div>
-        <p style="font-size: 0.9rem; color: #444;">Queremos volver a decir que sí. Tras un cuarto de siglo compartiendo proyectos, risas y la construcción de nuestra familia, deseamos renovar nuestra promesa ante Dios y celebrar este camino recorrido acompañados de las personas que más amamos.</p>
-    </section>
+    <!-- DÓNDE Y CUÁNDO -->
+    <section>
+      <h2>DÓNDE Y CUÁNDO</h2>
+      <div class="divider"></div>
 
-    <!-- CUENTA REGRESIVA Y GOOGLE CALENDAR -->
-    <section class="section reveal" style="background-color: var(--bg-light);">
-        <h3>EL GRAN DÍA</h3>
-        <p style="font-size: 0.85rem; letter-spacing: 1px; color: var(--text-muted); margin-top: 5px;">SÁBADO, 17 DE OCTUBRE DE 2026 — 7:00 PM</p>
-        
-        <div class="countdown-container">
-            <div class="time-box"><span id="days">00</span><label>Días</label></div>
-            <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
-            <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
-            <div class="time-box"><span id="seconds">00</span><label>Seg</label></div>
-        </div>
-
-        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bodas+de+Plata+-+Maruja+%26+Daniel&dates=20261017T190000/20261017T235900&details=Renovaci%C3%B3n+de+Votos+y+Celebraci%C3%B3n&location=Por+definir" target="_blank" class="btn btn-outline">
-            <i class="fa-regular fa-calendar-check"></i> Agendar Fecha
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+        <h3>Recepción & Fiesta</h3>
+        <p class="card-info"><strong>Lugar:</strong> Chifa Mi Luna</p>
+        <p class="card-info"><strong>Dirección:</strong> Av. Gregorio Escobedo 848, Jesús María</p>
+        <p class="card-info"><strong>Hora:</strong> 7:00 PM (Llegar puntual)</p>
+        <a href="https://maps.app.goo.gl/qmg281LpFp22sZhy6" target="_blank" rel="noopener noreferrer" class="btn">
+          <i class="fa-solid fa-location-dot"></i> Ver en Maps
         </a>
+      </div>
     </section>
 
-    <!-- LUGARES Y HORARIOS -->
-    <section class="section reveal">
-        <h2>DÓNDE Y CUÁNDO</h2>
-        <div class="divider"></div>
+    <!-- DRESS CODE -->
+    <section>
+      <h2>DRESS CODE</h2>
+      <div class="divider"></div>
+      <p><strong>FORMAL / ELEGANTE</strong></p>
+      <p><strong>Damas:</strong> Vestido o traje oscuro formal.</p>
+      <p><strong>Caballeros:</strong> Traje oscuro formal.</p>
 
-        <div class="card">
-            <i class="fa-solid fa-church card-icon"></i>
-            <h3>Ceremonia Religiosa</h3>
-            <p style="margin-top: 10px; font-size: 0.85rem;"><strong>Lugar:</strong> Nombre de la Iglesia (Por definir)</p>
-            <p style="font-size: 0.85rem;"><strong>Dirección:</strong> Dirección Exacta (Por definir)</p>
-            <p style="font-size: 0.85rem;"><strong>Hora:</strong> 7:00 PM</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 15px; font-size: 0.7rem;">
-                <i class="fa-solid fa-location-dot"></i> Ver en Maps
-            </a>
-        </div>
-
-        <div class="card">
-            <i class="fa-solid fa-glass-cheers card-icon"></i>
-            <h3>Recepción & Fiesta</h3>
-            <p style="margin-top: 10px; font-size: 0.85rem;"><strong>Lugar:</strong> Nombre del Local (Por definir)</p>
-            <p style="font-size: 0.85rem;"><strong>Dirección:</strong> Dirección Exacta (Por definir)</p>
-            <p style="font-size: 0.85rem;"><strong>Hora:</strong> A continuación</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 15px; font-size: 0.7rem;">
-                <i class="fa-solid fa-location-dot"></i> Ver en Maps
-            </a>
-        </div>
+      <div class="image-grid">
+        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=600&auto=format&fit=crop" alt="Inspiración Damas">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop" alt="Inspiración Caballeros">
+      </div>
     </section>
 
-    <!-- CÓDIGO DE VESTIMENTA -->
-    <section class="section reveal" style="background-color: var(--bg-light);">
-        <h2>DRESS CODE</h2>
-        <div class="divider"></div>
-        <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; color: var(--accent);">Black Tie (Formal)</p>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">Damas: Vestido largo elegante.<br>Caballeros: Esmoquin o traje oscuro formal.</p>
+    <!-- NUESTRA HISTORIA / FOTOS -->
+    <section>
+      <h2>NUESTRA HISTORIA</h2>
+      <div class="divider"></div>
+      <p>Momentos especiales en nuestro camino de 25 años.</p>
+
+      <div class="image-grid">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop" alt="Foto 1">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop" alt="Foto 2">
+        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=600&auto=format&fit=crop" alt="Foto 3">
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600&auto=format&fit=crop" alt="Foto 4">
+      </div>
+
+      <a href="https://photos.google.com/u/0/share/AF1QipNbBnJbVx0ZdfkjXbjpiVOS3jHAuuINvD4DmtW7MvYOi3VHOgDSCAgNkyhHajAjUA?hl=es&key=aF9iSkRyNGlIVUlvd2RwLVJQaVA1bjFKQURUZFhn" target="_blank" rel="noopener noreferrer" class="btn">
+        <i class="fa-solid fa-images"></i> Ver Fotos
+      </a>
+    </section>
+
+    <!-- REGALO -->
+    <section>
+      <h2>NUESTRO MEJOR REGALO</h2>
+      <div class="divider"></div>
+      <p>
+        El regalo más valioso para nosotros en estos 25 años es contar con tu presencia y compartir esta alegría juntos.
+      </p>
+      <p>
+        Nuestra casa ya está llena de recuerdos y cosas hermosas, por lo que si deseas hacernos un presente, agradeceremos profundamente una muestra de cariño en sobre o transferencia para nuestro viaje de aniversario.
+      </p>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3>Billetera Digital & Cuentas</h3>
         
-        <h4 style="margin-top: 30px; font-size: 0.75rem; text-transform: uppercase;">Inspiración de Atuendo</h4>
-        <div class="inspo-grid">
-            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=400&q=80" alt="Inspo Dama">
-            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80" alt="Inspo Caballero">
+        <div class="bank-details">
+          <p><strong>Yape / Plin:</strong> Daniel Romero Burgos</p>
+          <p><strong>Celular:</strong> +51 991 271 155</p>
+          <hr style="margin: 10px 0; border: 0; border-top: 1px solid #eee;">
+          <p><strong>Cuenta Soles BCP:</strong> 19395653510005</p>
+          <p><strong>CCI BCP Soles:</strong> 00219319565351000513</p>
         </div>
+      </div>
     </section>
 
-    <!-- REGALOS / APORTES -->
-    <section class="section reveal">
-        <h2>NUESTRO MEJOR REGALO</h2>
-        <div class="divider"></div>
-        <p style="font-size: 0.88rem; color: #444; margin-bottom: 25px;">
-            El regalo más valioso para nosotros en estos 25 años es contar con tu presencia y compartir esta alegría juntos. Nuestra casa ya está llena de recuerdos y cosas hermosas, por lo que si deseas hacernos un presente, agradeceremos profundamente una muestra de cariño en sobre o transferencia para nuestro viaje de aniversario.
-        </p>
+    <!-- CONFIRMACIÓN -->
+    <section>
+      <h2>CONFIRMACIÓN</h2>
+      <div class="divider"></div>
+      <p>Esperamos contar contigo para celebrar este día tan especial.</p>
+      <p>Por favor confirmar antes del <strong>01 de Octubre de 2026</strong>.</p>
 
-        <div class="card">
-            <i class="fa-solid fa-mobile-screen card-icon"></i>
-            <h3>Billetera Digital</h3>
-            <p style="margin-top: 10px; font-size: 0.85rem;"><strong>Yape:</strong> Daniel Romero</p>
-            <p style="font-size: 0.85rem;"><strong>Número:</strong> [Ingresar Número aquí]</p>
-        </div>
+      <a href="https://wa.me/51993825570?text=HOLA!%20CONFIRMO%20MI%20ASISTENCIA%20A%20LA%20BODA%20DE%20DANIEL%20Y%20MARUJA" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> CONFIRMAR ASISTENCIA
+      </a>
     </section>
 
-    <!-- ÁLBUM DE FOTOS -->
-    <section class="section reveal" style="background-color: var(--bg-light);">
-        <h2>NUESTRA HISTORIA</h2>
-        <div class="divider"></div>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Momentos especiales en nuestro camino de 25 años.</p>
-        
-        <div class="gallery-preview">
-            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=400&q=80" alt="Foto 1">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80" alt="Foto 2">
-            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=400&q=80" alt="Foto 3">
-            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=400&q=80" alt="Foto 4">
-        </div>
-
-        <a href="#" target="_blank" class="btn btn-outline" style="margin-top: 25px;">
-            <i class="fa-brands fa-google-drive"></i> Ver / Subir Fotos
-        </a>
-    </section>
-
-    <!-- CONFIRMACIÓN RSVP -->
-    <section class="section reveal">
-        <h2>CONFIRMACIÓN</h2>
-        <div class="divider"></div>
-        <p style="font-size: 0.88rem; color: #444;">Esperamos contar contigo para celebrar este día tan especial.</p>
-        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 5px;">Por favor confirmar antes del <strong>01 de Octubre de 2026</strong>.</p>
-
-        <a href="#" target="_blank" class="btn" style="background-color: #128C7E; border-color: #128C7E; margin-top: 20px;">
-            <i class="fa-brands fa-whatsapp"></i> Confirmar Asistencia
-        </a>
-    </section>
-
+    <!-- FOOTER -->
     <footer>
-        <p>MARUJA & DANIEL — 25 ANIVERSARIO</p>
+      <p>M & D — 2026</p>
     </footer>
 
-</div>
-
-<script>
-    // --- MÚSICA DE FONDO ---
-    const music = document.getElementById("bg-music");
-    const musicIcon = document.getElementById("music-icon");
-
-    function toggleMusic() {
-        if (music.paused) {
-            music.play();
-            musicIcon.classList.remove("fa-music");
-            musicIcon.classList.add("fa-pause");
-        } else {
-            music.pause();
-            musicIcon.classList.remove("fa-pause");
-            musicIcon.classList.add("fa-music");
-        }
-    }
-
-    // --- CUENTA REGRESIVA ---
-    const targetDate = new Date("Oct 17, 2026 19:00:00").getTime();
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const difference = targetDate - now;
-
-        if (difference > 0) {
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
-        }
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    // --- ANIMACIONES DE SCROLL REVEAL ---
-    function revealOnScroll() {
-        const reveals = document.querySelectorAll(".reveal");
-        for (let i = 0; i < reveals.length; i++) {
-            const windowHeight = window.innerHeight;
-            const elementTop = reveals[i].getBoundingClientRect().top;
-            const elementVisible = 80;
-
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add("active");
-            }
-        }
-    }
-
-    window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("load", revealOnScroll);
-</script>
+  </div>
 
 </body>
 </html>
