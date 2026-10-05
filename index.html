@@ -18,8 +18,6 @@
       --title-color: #1a1a1a;
       --accent-color: #b89b5e;
       --accent-hover: #9e8247;
-      --whatsapp-color: #128c7e;
-      --whatsapp-hover: #0e6c61;
       --font-title: 'Cormorant Garamond', serif;
       --font-body: 'Montserrat', sans-serif;
     }
@@ -273,17 +271,6 @@
 
     .btn:hover { background-color: var(--title-color); color: #ffffff; }
 
-    .btn-whatsapp {
-      background-color: var(--whatsapp-color);
-      color: #ffffff;
-      border: none;
-      width: 100%;
-      padding: 15px 20px;
-      font-weight: 500;
-    }
-
-    .btn-whatsapp:hover { background-color: var(--whatsapp-hover); color: #ffffff; }
-
     .image-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -369,7 +356,7 @@
       <h2>DÓNDE Y CUÁNDO</h2>
       <div class="divider"></div>
 
-      <!-- Fecha del Evento: 17 de Octubre de 2026 -->
+      <!-- Fecha Oficial del Evento -->
       <p style="font-size: 1.1rem; color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
         SÁBADO, 17 DE OCTUBRE DE 2026
       </p>
@@ -382,9 +369,21 @@
         </div>
         <div class="countdown-box">
           <div id="hours" class="countdown-number">00</div>
-          <div class="La fecha del evento ya se mantiene como **Sábado, 17 de Octubre de 2026 a las 7:00 PM** (tanto en el texto principal, en el contador regresivo, como en la integración con Google Calendar). 
+          <div class="countdown-label">HorAquí tienes el código completo y actualizado para tu archivo **`index.html`**. 
 
-Para quitar únicamente la sección completa de confirmación por WhatsApp (manteniendo todo el resto de la página intacto), utiliza este código actualizado para tu archivo **`index.html`**:
+Se ha realizado lo siguiente:
+1. **Fecha del Evento:** Sábado, 17 de Octubre de 2026 a las 7:00 PM.
+2. **Cuenta Regresiva (Countdown):** Ajustada exactamente al 17 de Octubre de 2026.
+3. **Eliminación del Bloque de Confirmación:** Se eliminó por completo la sección final de confirmación y el botón de WhatsApp.
+
+El link de tu invitación publicada en GitHub Pages es:
+`https://carolromeroa12-hash.github.io/bodasdeplata_marujaydaniel/`
+
+---
+
+### Código Completo para `index.html`
+
+Copia este bloque, reemplaza todo el contenido de tu archivo **`index.html`** en GitHub y guarda los cambios (*Commit changes*):
 
 ```html
 <!DOCTYPE html>
@@ -495,203 +494,4 @@ Para quitar únicamente la sección completa de confirmación por WhatsApp (mant
       width: 50px; height: 50px;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      cursor: pointer; border: none; outline: none;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .music-control:hover {
-      transform: scale(1.08);
-      background-color: var(--accent-hover);
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background-color: var(--bg-color);
-    }
-
-    .hero .subtitle {
-      font-size: 0.85rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      margin-bottom: 15px;
-      font-weight: 500;
-    }
-
-    .hero h1 {
-      font-family: var(--font-title);
-      font-size: 2.8rem;
-      font-weight: 400;
-      color: var(--title-color);
-      letter-spacing: 2px;
-      line-height: 1.2;
-      margin-bottom: 15px;
-    }
-
-    .hero .event-type {
-      font-size: 1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #777;
-      margin-bottom: 25px;
-    }
-
-    .divider {
-      width: 50px; height: 1px;
-      background-color: var(--accent-color);
-      margin: 0 auto 30px;
-    }
-
-    .quote {
-      font-family: var(--font-title);
-      font-style: italic;
-      font-size: 1.25rem;
-      color: #555;
-      padding: 0 15px;
-      margin-bottom: 10px;
-    }
-
-    .quote-author {
-      font-size: 0.85rem;
-      color: #888;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    section {
-      padding: 40px 25px;
-      text-align: center;
-      border-bottom: 1px solid #f0ece1;
-    }
-
-    section:last-child { border-bottom: none; }
-
-    h2 {
-      font-family: var(--font-title);
-      font-size: 2rem;
-      font-weight: 400;
-      color: var(--title-color);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    p { font-size: 0.95rem; color: #555; font-weight: 300; margin-bottom: 15px; }
-
-    /* Countdown Styles */
-    .countdown-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 25px 0 10px;
-    }
-
-    .countdown-box {
-      background-color: var(--card-bg);
-      border: 1px solid #f0eada;
-      padding: 12px 8px;
-      border-radius: 6px;
-      min-width: 70px;
-    }
-
-    .countdown-number {
-      font-family: var(--font-title);
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--title-color);
-      line-height: 1;
-    }
-
-    .countdown-label {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #888;
-      margin-top: 4px;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      padding: 30px 20px;
-      border-radius: 4px;
-      margin-top: 20px;
-      border: 1px solid #f0eada;
-    }
-
-    .card-icon { font-size: 1.8rem; color: var(--accent-color); margin-bottom: 15px; }
-
-    .card h3 {
-      font-family: var(--font-title);
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-      color: var(--title-color);
-      text-transform: uppercase;
-    }
-
-    .card-info { font-size: 0.9rem; margin-bottom: 8px; }
-    .card-info strong { font-weight: 500; color: #333; }
-
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 25px;
-      background-color: transparent;
-      color: var(--title-color);
-      border: 1px solid var(--title-color);
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover { background-color: var(--title-color); color: #ffffff; }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .bank-details {
-      text-align: left;
-      background: #fff;
-      padding: 15px;
-      border-radius: 4px;
-      margin-top: 15px;
-      font-size: 0.85rem;
-      border: 1px dashed var(--accent-color);
-    }
-
-    .bank-details p { margin-bottom: 6px; font-size: 0.85rem; }
-    .bank-details p:last-child { margin-bottom: 0; }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background-color: var(--bg-color);
-      font-size: 0.8rem;
-      color: #777;
-      letter-spacing
+      box-shadow: 0 4px 12px rgba(0,0,0
