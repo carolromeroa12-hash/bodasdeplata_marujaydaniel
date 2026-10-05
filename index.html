@@ -380,44 +380,46 @@
   </div>
 
   <script>
-    const music = document.getElementById('bg-music');
-    const musicIcon = document.getElementById('music-icon');
-    let isPlaying = false;
-
     function openInvitation() {
+      // Ocultar modal inmediatamente
       const modal = document.getElementById('welcome-modal');
       if (modal) {
+        modal.style.display = 'none';
         modal.classList.add('hidden');
       }
 
+      // Intentar reproducir música sin bloquear si falla
+      const music = document.getElementById('bg-music');
+      const musicIcon = document.getElementById('music-icon');
       if (music) {
-        music.play().then(() => {
-          isPlaying = true;
-          if (musicIcon) {
-            musicIcon.className = 'fa-solid fa-pause';
+        try {
+          const promise = music.play();
+          if (promise !== undefined) {
+            promise.then(() => {
+              if (musicIcon) musicIcon.className = 'fa-solid fa-pause';
+            }).catch(err => {
+              console.log('Autoplay prevenido:', err);
+            });
           }
-        }).catch(error => {
-          console.log('Autoplay prevenido por el navegador:', error);
-          isPlaying = false;
-        });
+        } catch(e) {
+          console.log('Error de audio:', e);
+        }
       }
     }
 
     function toggleMusic(e) {
       if (e) e.stopPropagation();
+      const music = document.getElementById('bg-music');
+      const musicIcon = document.getElementById('music-icon');
       if (!music) return;
 
-      if (isPlaying) {
-        music.pause();
-        if (musicIcon) musicIcon.className = 'fa-solid fa-music';
-        isPlaying = false;
-      } else {
+      if (music.paused) {
         music.play().then(() => {
           if (musicIcon) musicIcon.className = 'fa-solid fa-pause';
-          isPlaying = true;
-        }).catch(err => {
-          console.log('Error al reproducir audio:', err);
-        });
+        }).catch(err => console.log(err));
+      } else {
+        music.pause();
+        if (musicIcon) musicIcon.className = 'fa-solid fa-music';
       }
     }
 
@@ -441,12 +443,11 @@
 
         if (daysEl) daysEl.innerText = days < 10 ? '0' + days : days;
         if (hoursEl) hoursEl.innerText = hours < 10 ? '0' + hours : hours;
-        if (minutesEl) minutesEl.innerText = minutes < 10 ? '0' +Aquí tienes el código de tu archivo corregido. El fallo en el botón de abrir invitación se debía a dos razones principales:
+        if (minutesEl) minutesEl.innerText = minutes <El problema proviene del código JS previo que quedó truncado al final (incluía fragmentos de texto explicativo pegados dentro del script en la primera respuesta) y de un conflicto de permisos en el reproductor de audio, lo cual provoca que JavaScript falle y bloquee la función del botón.
 
-1. **Incompletitud y sintaxis en el HTML/JavaScript original:** La etiqueta `<div class="countdown-` había quedado trunca en el HTML, lo que generaba un error de sintaxis y bloqueaba la ejecución del JavaScript.
-2. **Promesas no capturadas en la reproducción de audio:** La función `play()` del navegador devuelve una Promesa (`Promise`). Si el navegador o el dispositivo bloqueaba la autoreproducción, el script se detenía si no contaba con un `.catch()` para evitar romper el flujo del código.
+Además, para asegurar que la pantalla modal se retire al instante sin depender de transiciones de CSS, agregamos la instrucción directa `display: none` cuando haces clic.
 
-A continuación se presenta el código completo y corregido, asegurando que el botón funcione correctamente y sin realizar cambios en la estructura original:
+Copia este código corregido y reemplaza todo el contenido en tu archivo **`index.html`** en GitHub:
 
 ```html
 <!DOCTYPE html>
@@ -508,13 +509,9 @@ A continuación se presenta el código completo y corregido, asegurando que el b
       justify-content: center;
       text-align: center;
       padding: 20px;
-      transition: opacity 0.4s ease, visibility 0.4s ease;
     }
 
     .welcome-modal.hidden {
-      opacity: 0 !important;
-      visibility: hidden !important;
-      pointer-events: none !important;
       display: none !important;
     }
 
@@ -724,34 +721,6 @@ A continuación se presenta el código completo y corregido, asegurando que el b
 
     .btn:hover { background-color: var(--title-color); color: #ffffff; }
 
-    .image-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .bank-details {
-      text-align: left;
-      background: #fff;
-      padding: 15px;
-      border-radius: 4px;
-      margin-top: 15px;
-      font-size: 0.85rem;
-      border: 1px dashed var(--accent-color);
-    }
-
-    .bank-details p { margin-bottom: 6px; font-size: 0.85rem; }
-    .bank-details p:last-child { margin-bottom: 0; }
-
     footer {
       text-align: center;
       padding: 30px;
@@ -838,114 +807,8 @@ A continuación se presenta el código completo y corregido, asegurando que el b
         <div class="card-icon"><i class="fa-solid fa-glass-cheers"></i></div>
         <h3>Recepción y Celebración</h3>
         <p class="card-info"><strong>Hora:</strong> 7:00 PM</p>
-        <p class="card-info"><strong>Lugar:</strong> Salón de Eventos "El Ensueño"</p>
-        <p class="card-info"><strong>Dirección:</strong> Av. Las Flores 123, Ciudad</p>
-        
+        <p class="card-info"><strong>Lugar:</strong> Salón de Eventos</p>
+
         <div class="button-group">
           <a href="[https://maps.google.com](https://maps.google.com)" target="_blank" rel="noopener noreferrer" class="btn">
-            <i class="fa-solid fa-location-dot"></i> Ver en Google Maps
-          </a>
-          <a href="[https://calendar.google.com](https://calendar.google.com)" target="_blank" rel="noopener noreferrer" class="btn">
-            <i class="fa-solid fa-calendar-plus"></i> Agendar en Calendario
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>CÓDIGO DE VESTIMENTA</h2>
-      <div class="divider"></div>
-      <p style="font-weight: 500; font-size: 1rem; color: var(--title-color);">ELEGANTE / FORMAL</p>
-      <p>Agradecemos acompañarnos con sus mejores trajes y vestidos de noche para celebrar esta gran ocasión.</p>
-    </section>
-
-    <section>
-      <h2>REGALOS</h2>
-      <div class="divider"></div>
-      <p>El mejor regalo es tu presencia en este día tan especial. Si deseas realizarnos un presente, puedes hacerlo a través de la siguiente cuenta:</p>
-      
-      <div class="bank-details">
-        <p><strong>Banco:</strong> Banco Ejemplo</p>
-        <p><strong>Titular:</strong> Maruja & Daniel</p>
-        <p><strong>Número de Cuenta:</strong> 123-4567890-0-12</p>
-        <p><strong>CCI:</strong> 002-123-004567890012-34</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>MARUJA & DANIEL — 2026</p>
-    </footer>
-
-  </div>
-
-  <script>
-    // Función para abrir la invitación
-    function openInvitation() {
-      var modal = document.getElementById('welcome-modal');
-      if (modal) {
-        modal.classList.add('hidden');
-      }
-
-      var audio = document.getElementById('bg-music');
-      var icon = document.getElementById('music-icon');
-      if (audio) {
-        audio.play().then(function() {
-          if (icon) {
-            icon.className = 'fa-solid fa-pause';
-          }
-        }).catch(function(error) {
-          console.log('Autoplay bloqueado por el navegador:', error);
-        });
-      }
-    }
-
-    // Función para pausar / reproducir música
-    function toggleMusic(event) {
-      if (event) event.stopPropagation();
-      var audio = document.getElementById('bg-music');
-      var icon = document.getElementById('music-icon');
-
-      if (audio) {
-        if (audio.paused) {
-          audio.play().then(function() {
-            if (icon) icon.className = 'fa-solid fa-pause';
-          }).catch(function(err) {
-            console.log(err);
-          });
-        } else {
-          audio.pause();
-          if (icon) icon.className = 'fa-solid fa-music';
-        }
-      }
-    }
-
-    // Cuenta regresiva
-    var targetDate = new Date('October 17, 2026 19:00:00').getTime();
-
-    function updateCountdown() {
-      var now = new Date().getTime();
-      var difference = targetDate - now;
-
-      if (difference > 0) {
-        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        var daysElem = document.getElementById('days');
-        var hoursElem = document.getElementById('hours');
-        var minutesElem = document.getElementById('minutes');
-        var secondsElem = document.getElementById('seconds');
-
-        if (daysElem) daysElem.innerText = days < 10 ? '0' + days : days;
-        if (hoursElem) hoursElem.innerText = hours < 10 ? '0' + hours : hours;
-        if (minutesElem) minutesElem.innerText = minutes < 10 ? '0' + minutes : minutes;
-        if (secondsElem) secondsElem.innerText = seconds < 10 ? '0' + seconds : seconds;
-      }
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-</body>
-</html>
+            <i class="fa-solid fa
