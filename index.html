@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bodas de Plata - Maruja & Daniel</title>
   
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap)" rel="stylesheet">
-  <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
@@ -273,6 +273,21 @@
 
     .btn:hover { background-color: var(--title-color); color: #ffffff; }
 
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
     .bank-details {
       text-align: left;
       background: #fff;
@@ -310,7 +325,7 @@
 
   <!-- Audio de Fondo -->
   <audio id="bg-music" loop preload="auto">
-    <source src="[https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-113083.mp3](https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-113083.mp3)" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-113083.mp3" type="audio/mpeg">
   </audio>
 
   <!-- Botón de Control de Música -->
@@ -369,18 +384,18 @@
       </div>
 
       <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-glass-cheers"></i></div>
+        <i class="fa-solid fa-glass-cheers card-icon"></i>
         <h3>Recepción y Celebración</h3>
         <p class="card-info"><strong>Hora:</strong> 7:00 PM</p>
-        <p class="card-info"><strong>Lugar:</strong> Salón de Eventos "El Ensueño"</p>
-        <p class="card-info"><strong>Dirección:</strong> Av. Las Flores 123, Ciudad</p>
-        
+        <p class="card-info"><strong>Lugar:</strong> Salón de Eventos "Las Gardenias"</p>
+        <p class="card-info"><strong>Dirección:</strong> Av. Principal 123, Lima</p>
+
         <div class="button-group">
-          <a href="[https://maps.google.com](https://maps.google.com)" target="_blank" rel="noopener noreferrer" class="btn">
-            <i class="fa-solid fa-location-dot"></i> Ver en Google Maps
+          <a href="https://maps.google.com" target="_blank" class="btn">
+            <i class="fa-solid fa-location-dot"></i> Ver Mapa
           </a>
-          <a href="[https://calendar.google.com](https://calendar.google.com)" target="_blank" rel="noopener noreferrer" class="btn">
-            <i class="fa-solid fa-calendar-plus"></i> Agendar en Calendario
+          <a href="https://calendar.google.com" target="_blank" class="btn">
+            <i class="fa-regular fa-calendar-plus"></i> Agendar evento
           </a>
         </div>
       </div>
@@ -389,8 +404,30 @@
     <section>
       <h2>CÓDIGO DE VESTIMENTA</h2>
       <div class="divider"></div>
-      <p style="font-weight: 500; font-size: 1rem; color: var(--title-color);">ELEGANTE / FORMAL</p>
-      <p>Agradecemos acompañarnos con sus mejores trajes y vestidos de noche para celebrar esta gran ocasión.</p>
+      <p style="font-weight: 500; font-size: 1rem; color: var(--title-color); letter-spacing: 1px;">BLACK TIE / ETIQUETA NEGRA</p>
+      <p>Queremos que esta noche sea inolvidable y elegante. Por favor, acompáñanos con atuendo de gala.</p>
+
+      <div class="image-grid">
+        <div>
+          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=400" alt="Código de vestimenta Mujeres">
+          <p style="margin-top: 8px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Damas: Vestido Largo</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=400" alt="Código de vestimenta Hombres">
+          <p style="margin-top: 8px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Caballeros: Esmoquin / Traje Oscuro</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>GALERÍA DE RECUERDOS</h2>
+      <div class="divider"></div>
+      <p>Un recorrido por algunos de nuestros mejores momentos durante estos 25 años.</p>
+
+      <div class="image-grid">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=400" alt="Momento 1">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=400" alt="Momento 2">
+      </div>
     </section>
 
     <section>
@@ -399,10 +436,10 @@
       <p>El mejor regalo es tu presencia en este día tan especial. Si deseas realizarnos un presente, puedes hacerlo a través de la siguiente cuenta:</p>
       
       <div class="bank-details">
-        <p><strong>Banco:</strong> Banco Ejemplo</p>
+        <p><strong>Banco:</strong> BCP</p>
         <p><strong>Titular:</strong> Maruja & Daniel</p>
-        <p><strong>Número de Cuenta:</strong> 123-4567890-0-12</p>
-        <p><strong>CCI:</strong> 002-123-004567890012-34</p>
+        <p><strong>Número de Cuenta:</strong> 191-12345678-0-99</p>
+        <p><strong>CCI:</strong> 002-191-0012345678099-52</p>
       </div>
     </section>
 
