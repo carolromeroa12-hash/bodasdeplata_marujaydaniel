@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bodas de Plata - Maruja & Daniel</title>
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap)" rel="stylesheet">
+  <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
 
   <style>
     :root {
@@ -273,453 +273,18 @@
 
     .btn:hover { background-color: var(--title-color); color: #ffffff; }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background-color: var(--bg-color);
-      font-size: 0.8rem;
-      color: #777;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Modal de Bienvenida -->
-  <div id="welcome-modal" class="welcome-modal">
-    <h2>MARUJA & DANIEL</h2>
-    <p>Te invitamos a celebrar nuestras Bodas de Plata</p>
-    <button id="enter-btn" class="btn-enter" onclick="openInvitation()">
-      <i class="fa-solid fa-envelope-open-text" style="margin-right: 8px;"></i> Abrir Invitación
-    </button>
-  </div>
-
-  <!-- Audio de Fondo -->
-  <audio id="bg-music" loop preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-113083.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Botón de Control de Música -->
-  <button id="music-btn" class="music-control" title="Pausar / Reproducir Música" onclick="toggleMusic(event)">
-    <i id="music-icon" class="fa-solid fa-music"></i>
-  </button>
-
-  <div class="container">
-
-    <header class="hero">
-      <div class="subtitle">25 Aniversario</div>
-      <h1>MARUJA & DANIEL</h1>
-      <div class="event-type">BODAS DE PLATA</div>
-      <div class="divider"></div>
-      <div class="quote">
-        "Estar enamorado es algo maravilloso, pero el amor maduro es lo que sostiene una vida entera."
-      </div>
-      <div class="quote-author">— C.S. Lewis</div>
-    </header>
-
-    <section>
-      <h2>25 AÑOS DESPUÉS</h2>
-      <div class="divider"></div>
-      <p>
-        25 años caminando juntos son la mejor razón para celebrar. Tras un cuarto de siglo de historias, aprendizajes y momentos inolvidables, queremos reunirnos con nuestra familia y amigos más cercanos para brindar por todo lo vivido y por lo que aún nos espera.
-      </p>
-    </section>
-
-    <section>
-      <h2>DÓNDE Y CUÁNDO</h2>
-      <div class="divider"></div>
-
-      <!-- Fecha Oficial -->
-      <p style="font-size: 1.1rem; color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
-        SÁBADO, 17 DE OCTUBRE DE 2026
-      </p>
-
-      <!-- Contador / Countdown -->
-      <div class="countdown-container">
-        <div class="countdown-box">
-          <div id="days" class="countdown-number">00</div>
-          <div class="countdown-label">Días</div>
-        </div>
-        <div class="countdown-box">
-          <div id="hours" class="countdown-number">00</div>
-          <div class="countdown-label">Horas</div>
-        </div>
-        <div class="countdown-box">
-          <div id="minutes" class="countdown-number">00</div>
-          <div class="countdown-label">Min.</div>
-        </div>
-        <div class="countdown-box">
-          <div id="seconds" class="countdown-number">00</div>
-          <div class="countdown-label">Seg.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <i class="fa-solid fa-glass-cheers card-icon"></i>
-        <h3>Recepción y Celebración</h3>
-        <p class="card-info"><strong>Hora:</strong> 7:00 PM</p>
-        <p class="card-info"><strong>Lugar:</strong> Salón de Eventos "Las Gardenias"</p>
-        <p class="card-info"><strong>Dirección:</strong> Av. Principal 123, Lima</p>
-
-        <div class="button-group">
-          <a href="https://maps.google.com" target="_blank" class="btn">
-            <i class="fa-solid fa-location-dot"></i> Ver Mapa
-          </a>
-          <a href="https://calendar.google.com" target="_blank" class="btn">
-            <i class="fa-regular fa-calendar-plus"></i> Agendar evento
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p>Maruja & Daniel — 2026</p>
-    </footer>
-
-  </div>
-
-  <script>
-    function openInvitation() {
-      // Ocultar modal inmediatamente
-      const modal = document.getElementById('welcome-modal');
-      if (modal) {
-        modal.style.display = 'none';
-        modal.classList.add('hidden');
-      }
-
-      // Intentar reproducir música sin bloquear si falla
-      const music = document.getElementById('bg-music');
-      const musicIcon = document.getElementById('music-icon');
-      if (music) {
-        try {
-          const promise = music.play();
-          if (promise !== undefined) {
-            promise.then(() => {
-              if (musicIcon) musicIcon.className = 'fa-solid fa-pause';
-            }).catch(err => {
-              console.log('Autoplay prevenido:', err);
-            });
-          }
-        } catch(e) {
-          console.log('Error de audio:', e);
-        }
-      }
-    }
-
-    function toggleMusic(e) {
-      if (e) e.stopPropagation();
-      const music = document.getElementById('bg-music');
-      const musicIcon = document.getElementById('music-icon');
-      if (!music) return;
-
-      if (music.paused) {
-        music.play().then(() => {
-          if (musicIcon) musicIcon.className = 'fa-solid fa-pause';
-        }).catch(err => console.log(err));
-      } else {
-        music.pause();
-        if (musicIcon) musicIcon.className = 'fa-solid fa-music';
-      }
-    }
-
-    // Cuenta regresiva
-    const targetDate = new Date('October 17, 2026 19:00:00').getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
-
-        if (daysEl) daysEl.innerText = days < 10 ? '0' + days : days;
-        if (hoursEl) hoursEl.innerText = hours < 10 ? '0' + hours : hours;
-        if (minutesEl) minutesEl.innerText = minutes <El problema proviene del código JS previo que quedó truncado al final (incluía fragmentos de texto explicativo pegados dentro del script en la primera respuesta) y de un conflicto de permisos en el reproductor de audio, lo cual provoca que JavaScript falle y bloquee la función del botón.
-
-Además, para asegurar que la pantalla modal se retire al instante sin depender de transiciones de CSS, agregamos la instrucción directa `display: none` cuando haces clic.
-
-Copia este código corregido y reemplaza todo el contenido en tu archivo **`index.html`** en GitHub:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bodas de Plata - Maruja & Daniel</title>
-  
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap)" rel="stylesheet">
-  <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
-
-  <style>
-    :root {
-      --bg-color: #fcfbf9;
-      --card-bg: #f7f5f0;
-      --text-color: #4a4a4a;
-      --title-color: #1a1a1a;
-      --accent-color: #b89b5e;
-      --accent-hover: #9e8247;
-      --font-title: 'Cormorant Garamond', serif;
-      --font-body: 'Montserrat', sans-serif;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 500px;
-      background-color: #ffffff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .welcome-modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background-color: rgba(252, 251, 249, 0.98);
-      z-index: 10000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .welcome-modal.hidden {
-      display: none !important;
-    }
-
-    .welcome-modal h2 {
-      font-family: var(--font-title);
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      color: var(--title-color);
-    }
-
-    .welcome-modal p {
-      font-size: 0.95rem;
-      color: #666;
-      margin-bottom: 25px;
-    }
-
-    .btn-enter {
-      padding: 15px 35px;
-      background-color: var(--accent-color);
-      color: #ffffff;
-      border: none;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(184, 155, 94, 0.3);
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-
-    .btn-enter:hover {
-      background-color: var(--accent-hover);
-      transform: scale(1.03);
-    }
-
-    .music-control {
-      position: fixed;
-      bottom: 25px; right: 25px;
-      z-index: 999;
-      background-color: var(--accent-color);
-      color: #ffffff;
-      width: 50px; height: 50px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      cursor: pointer; border: none; outline: none;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .music-control:hover {
-      transform: scale(1.08);
-      background-color: var(--accent-hover);
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background-color: var(--bg-color);
-    }
-
-    .hero .subtitle {
-      font-size: 0.85rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      margin-bottom: 15px;
-      font-weight: 500;
-    }
-
-    .hero h1 {
-      font-family: var(--font-title);
-      font-size: 2.8rem;
-      font-weight: 400;
-      color: var(--title-color);
-      letter-spacing: 2px;
-      line-height: 1.2;
-      margin-bottom: 15px;
-    }
-
-    .hero .event-type {
-      font-size: 1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #777;
-      margin-bottom: 25px;
-    }
-
-    .divider {
-      width: 50px; height: 1px;
-      background-color: var(--accent-color);
-      margin: 0 auto 30px;
-    }
-
-    .quote {
-      font-family: var(--font-title);
-      font-style: italic;
-      font-size: 1.25rem;
-      color: #555;
-      padding: 0 15px;
-      margin-bottom: 10px;
-    }
-
-    .quote-author {
-      font-size: 0.85rem;
-      color: #888;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    section {
-      padding: 40px 25px;
-      text-align: center;
-      border-bottom: 1px solid #f0ece1;
-    }
-
-    section:last-child { border-bottom: none; }
-
-    h2 {
-      font-family: var(--font-title);
-      font-size: 2rem;
-      font-weight: 400;
-      color: var(--title-color);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    p { font-size: 0.95rem; color: #555; font-weight: 300; margin-bottom: 15px; }
-
-    .countdown-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 25px 0 10px;
-    }
-
-    .countdown-box {
-      background-color: var(--card-bg);
-      border: 1px solid #f0eada;
-      padding: 12px 8px;
-      border-radius: 6px;
-      min-width: 70px;
-    }
-
-    .countdown-number {
-      font-family: var(--font-title);
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--title-color);
-      line-height: 1;
-    }
-
-    .countdown-label {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #888;
-      margin-top: 4px;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      padding: 30px 20px;
+    .bank-details {
+      text-align: left;
+      background: #fff;
+      padding: 15px;
       border-radius: 4px;
-      margin-top: 20px;
-      border: 1px solid #f0eada;
+      margin-top: 15px;
+      font-size: 0.85rem;
+      border: 1px dashed var(--accent-color);
     }
 
-    .card-icon { font-size: 1.8rem; color: var(--accent-color); margin-bottom: 15px; }
-
-    .card h3 {
-      font-family: var(--font-title);
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-      color: var(--title-color);
-      text-transform: uppercase;
-    }
-
-    .card-info { font-size: 0.9rem; margin-bottom: 8px; }
-    .card-info strong { font-weight: 500; color: #333; }
-
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 25px;
-      background-color: transparent;
-      color: var(--title-color);
-      border: 1px solid var(--title-color);
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover { background-color: var(--title-color); color: #ffffff; }
+    .bank-details p { margin-bottom: 6px; font-size: 0.85rem; }
+    .bank-details p:last-child { margin-bottom: 0; }
 
     footer {
       text-align: center;
@@ -738,7 +303,7 @@ Copia este código corregido y reemplaza todo el contenido en tu archivo **`inde
   <div id="welcome-modal" class="welcome-modal">
     <h2>MARUJA & DANIEL</h2>
     <p>Te invitamos a celebrar nuestras Bodas de Plata</p>
-    <button id="enter-btn" class="btn-enter" onclick="openInvitation()">
+    <button id="enter-btn" class="btn-enter">
       <i class="fa-solid fa-envelope-open-text" style="margin-right: 8px;"></i> Abrir Invitación
     </button>
   </div>
@@ -749,7 +314,7 @@ Copia este código corregido y reemplaza todo el contenido en tu archivo **`inde
   </audio>
 
   <!-- Botón de Control de Música -->
-  <button id="music-btn" class="music-control" title="Pausar / Reproducir Música" onclick="toggleMusic(event)">
+  <button id="music-btn" class="music-control" title="Pausar / Reproducir Música">
     <i id="music-icon" class="fa-solid fa-music"></i>
   </button>
 
@@ -807,8 +372,129 @@ Copia este código corregido y reemplaza todo el contenido en tu archivo **`inde
         <div class="card-icon"><i class="fa-solid fa-glass-cheers"></i></div>
         <h3>Recepción y Celebración</h3>
         <p class="card-info"><strong>Hora:</strong> 7:00 PM</p>
-        <p class="card-info"><strong>Lugar:</strong> Salón de Eventos</p>
-
+        <p class="card-info"><strong>Lugar:</strong> Salón de Eventos "El Ensueño"</p>
+        <p class="card-info"><strong>Dirección:</strong> Av. Las Flores 123, Ciudad</p>
+        
         <div class="button-group">
           <a href="[https://maps.google.com](https://maps.google.com)" target="_blank" rel="noopener noreferrer" class="btn">
-            <i class="fa-solid fa
+            <i class="fa-solid fa-location-dot"></i> Ver en Google Maps
+          </a>
+          <a href="[https://calendar.google.com](https://calendar.google.com)" target="_blank" rel="noopener noreferrer" class="btn">
+            <i class="fa-solid fa-calendar-plus"></i> Agendar en Calendario
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>CÓDIGO DE VESTIMENTA</h2>
+      <div class="divider"></div>
+      <p style="font-weight: 500; font-size: 1rem; color: var(--title-color);">ELEGANTE / FORMAL</p>
+      <p>Agradecemos acompañarnos con sus mejores trajes y vestidos de noche para celebrar esta gran ocasión.</p>
+    </section>
+
+    <section>
+      <h2>REGALOS</h2>
+      <div class="divider"></div>
+      <p>El mejor regalo es tu presencia en este día tan especial. Si deseas realizarnos un presente, puedes hacerlo a través de la siguiente cuenta:</p>
+      
+      <div class="bank-details">
+        <p><strong>Banco:</strong> Banco Ejemplo</p>
+        <p><strong>Titular:</strong> Maruja & Daniel</p>
+        <p><strong>Número de Cuenta:</strong> 123-4567890-0-12</p>
+        <p><strong>CCI:</strong> 002-123-004567890012-34</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>MARUJA & DANIEL — 2026</p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var enterBtn = document.getElementById('enter-btn');
+      var welcomeModal = document.getElementById('welcome-modal');
+      var audio = document.getElementById('bg-music');
+      var musicBtn = document.getElementById('music-btn');
+      var icon = document.getElementById('music-icon');
+
+      function openInvitation() {
+        if (welcomeModal) {
+          welcomeModal.style.display = 'none';
+          welcomeModal.classList.add('hidden');
+        }
+
+        if (audio) {
+          try {
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+              playPromise.then(function() {
+                if (icon) icon.className = 'fa-solid fa-pause';
+              }).catch(function(err) {
+                console.log('Autoplay bloqueado:', err);
+              });
+            }
+          } catch(e) {
+            console.log(e);
+          }
+        }
+      }
+
+      function toggleMusic(e) {
+        if (e) e.stopPropagation();
+        if (!audio) return;
+
+        if (audio.paused) {
+          audio.play().then(function() {
+            if (icon) icon.className = 'fa-solid fa-pause';
+          }).catch(function(err) {
+            console.log(err);
+          });
+        } else {
+          audio.pause();
+          if (icon) icon.className = 'fa-solid fa-music';
+        }
+      }
+
+      if (enterBtn) {
+        enterBtn.addEventListener('click', openInvitation);
+        enterBtn.addEventListener('touchstart', openInvitation);
+      }
+
+      if (musicBtn) {
+        musicBtn.addEventListener('click', toggleMusic);
+      }
+
+      // Cuenta regresiva
+      var targetDate = new Date('October 17, 2026 19:00:00').getTime();
+
+      function updateCountdown() {
+        var now = new Date().getTime();
+        var difference = targetDate - now;
+
+        if (difference > 0) {
+          var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+          var daysElem = document.getElementById('days');
+          var hoursElem = document.getElementById('hours');
+          var minutesElem = document.getElementById('minutes');
+          var secondsElem = document.getElementById('seconds');
+
+          if (daysElem) daysElem.innerText = days < 10 ? '0' + days : days;
+          if (hoursElem) hoursElem.innerText = hours < 10 ? '0' + hours : hours;
+          if (minutesElem) minutesElem.innerText = minutes < 10 ? '0' + minutes : minutes;
+          if (secondsElem) secondsElem.innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    });
+  </script>
+</body>
+</html>
